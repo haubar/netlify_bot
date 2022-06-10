@@ -1,0 +1,26 @@
+[build]
+  functions = "stock"
+
+[context.production]
+  command = "yarn build"
+  publish = "public"
+
+[context.develop]
+  command = "yarn dev:build"
+  publish = "build"
+
+[[redirects]]
+  from = "/webhook"
+  to = "/.netlify/stock/ "
+  status = 301
+
+
+# [[redirects]]
+#   from = "https://localweather-io.netlify.com/*"
+#   to = "https://localweather.io/:splat"
+#   status = 301
+
+# [[redirects]]
+#   from = "https://dev-localweather-io.netlify.com/*"
+#   to = "https://dev.localweather.io/:splat"
+#   status = 301
