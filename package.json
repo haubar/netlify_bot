@@ -1,0 +1,26 @@
+{
+  "name": "stock_bot",
+  "version": "1.0.0",
+  "description": "STOCK Line BOT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node webhook.js",
+    "pretest": "eslint index.js lib/**/*.js test/**/*.js",
+    "test": "mocha --timeout 5000",
+    "lint": "eslint index.js lib/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haubar/linebot.git"
+  },
+  "author": "haubar",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "@line/bot-sdk": "^7.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "mocha": "^3.1.0"
+  }
+}
