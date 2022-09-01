@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haubar/linebot.git"
+    "url": "git+https://github.com/haubar/.git"
   },
   "author": "haubar",
   "license": "MIT",
