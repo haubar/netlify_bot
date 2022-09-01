@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haubar/.git"
+    "url": "git+https://github.com/haubar/stock_bot.git"
   },
   "author": "haubar",
   "license": "MIT",
