@@ -27,9 +27,7 @@ const handler = async (event) => {
 const handler = async (event, context) => {
 
 	//驗證格式
-
-
-	
+	console.log(event)
 	
 	// 如果是訊息而且訊息是文字的話
 	// 需再拆分
