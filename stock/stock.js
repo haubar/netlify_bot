@@ -28,23 +28,22 @@ const handler = async (event, context) => {
 
 	//驗證格式
 
-	// 如果是訊息而且訊息是文字的話
-	// 需再拆分
-	if (event.type !== 'message' || event.message.type !== 'text') {
-		// const response = {
-		// 	type: 'text',
-		// 	text: `我還沒空支援這個格式...`,
-		// }
-		return Promise.resolve(null)
-	}
 
 	const { replyToken } = event;
-    const { text } = event.message;
-
-	//回應方式及內容
 	const response = {
 		type: 'text',
-		text: `我現在只會重覆你講的話：${text}～`,
+		text: `我還沒空支援這個格式...`,
+	}
+	// 如果是訊息而且訊息是文字的話
+	// 需再拆分
+	if (event.type == 'message' || event.message.type == 'text') {
+		
+    	const { text } = event.message;
+		//回應方式及內容
+		response = {
+			type: 'text',
+			text: `我現在只會重覆你講的話：${text}～`,
+		}
 	}
 
 	//line sdk 回應訊息
