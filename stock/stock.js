@@ -12,6 +12,20 @@ const client = new line.Client(clientConfig);
 
 const API_ROOT = 'https://api.unsplash.com';
 console.log(123456789)  
+
+const handler = async (event) => {
+	try {
+	  const subject = event.queryStringParameters.name || 'World, this is test function'
+	  return {
+		statusCode: 200,
+		body: JSON.stringify({ message: `Hello ${subject}` }),
+	  }
+	} catch (error) {
+	  return { statusCode: 500, body: error.toString() }
+	}
+  }
+
+/*
 const handler = async (event, context) => {
 
 	//驗證格式
@@ -55,6 +69,7 @@ const handler = async (event, context) => {
 		}
 	  }
 }
+*/
 
 //輸出
 module.exports = { handler }
