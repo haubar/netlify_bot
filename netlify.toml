@@ -11,8 +11,8 @@
 
 [[redirects]]
   from = "/webhook"
-  to = "/.netlify/stock/ "
-  status = 301
+  to = "/stock "
+  status = 200
 
 
 # [[redirects]]
