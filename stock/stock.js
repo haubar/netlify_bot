@@ -2,10 +2,10 @@ require("dotenv").config()
 const line = require('@line/bot-sdk')
 const fetch = require("node-fetch")
 
-const {
-	CHANNEL_TOKEN,
-	CHANNEL_SECRET
-  } = process.env
+const clientConfig = {
+	channelAccessToken: process.env.CHANNEL_TOKEN,
+	channelSecret: process.env.CHANNEL_SECRET
+  } 
 
 const client = new line.Client(clientConfig);
 
