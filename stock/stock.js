@@ -27,7 +27,7 @@ const handler = async (event) => {
 const handler = async (event, context) => {
 
 	//驗證格式
-	
+	const { replyToken } = event;
 	const response = {
 		type: 'text',
 		text: `我還沒空支援這個格式...test`,
@@ -45,14 +45,7 @@ const handler = async (event, context) => {
 			type: 'text',
 			text: `我現在只會重覆你講的話：${text}～`,
 		}
-	} else {
-		const { replyToken } = event;
-		const response = {
-			type: 'text',
-			text: `我還沒空支援這個格式...`,
-		}
-	}
-
+	} 
 	//line sdk 回應訊息
 	await client.replyMessage(replyToken, response)
 
