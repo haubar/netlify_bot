@@ -27,8 +27,13 @@ const handler = async (event) => {
 const handler = async (event, context) => {
 
 	//驗證格式
-	console.log(event)
 	
+	const response = {
+		type: 'text',
+		text: `我還沒空支援這個格式...test`,
+	}
+	await client.replyMessage(replyToken, response)
+
 	// 如果是訊息而且訊息是文字的話
 	// 需再拆分
 	if (event.type == 'message' || event.message.type == 'text') {
