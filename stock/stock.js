@@ -36,6 +36,7 @@ const handler = async (event, context) => {
 
 	// 如果是訊息而且訊息是文字的話
 	// 需再拆分
+	/*
 	if (event.type == 'message' || event.message.type == 'text') {
 		
 		const { replyToken } = event;
@@ -48,7 +49,7 @@ const handler = async (event, context) => {
 	} 
 	//line sdk 回應訊息
 	await client.replyMessage(replyToken, response)
-
+	*/
 	//驗證
 	/*
 	try {
