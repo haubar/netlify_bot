@@ -2,11 +2,11 @@
   functions = "stock"
 
 [context.production]
-  command = "yarn build"
+  command = "yarn start"
   publish = "public"
 
 [context.develop]
-  command = "yarn dev:build"
+  command = "yarn start"
   publish = "build"
 
 [[redirects]]
