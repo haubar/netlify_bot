@@ -35,7 +35,6 @@ const handler = async (event, context) => {
 			type: 'text',
 			text: `我還沒空支援這個格式...`,
 		}
-		await client.replyMessage(replyToken, response)
 	}
 
 	const { replyToken } = event;
