@@ -31,10 +31,11 @@ const handler = async (event, context) => {
 	// 如果是訊息而且訊息是文字的話
 	// 需再拆分
 	if (event.type !== 'message' || event.message.type !== 'text') {
-		const response = {
-			type: 'text',
-			text: `我還沒空支援這個格式...`,
-		}
+		// const response = {
+		// 	type: 'text',
+		// 	text: `我還沒空支援這個格式...`,
+		// }
+		return Promise.resolve(null)
 	}
 
 	const { replyToken } = event;
