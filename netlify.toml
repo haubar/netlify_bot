@@ -1,13 +1,13 @@
 [build]
   functions = "stock"
 
-[context.production]
-  command = "yarn start"
-  publish = "public"
+# [context.production]
+#   command = "yarn start"
+#   publish = "public"
 
-[context.develop]
-  command = "yarn start"
-  publish = "build"
+# [context.develop]
+#   command = "yarn start"
+#   publish = "build"
 
 [[redirects]]
   from = "/webhook"
