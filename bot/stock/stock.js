@@ -31,10 +31,6 @@ const botEvent = async (event, context) => {
 }
 
 try {
-    // 用 CHANNEL_SECRET 來驗證 Line Bot 身分
-    if (!line.validateSignature(body, clientConfig.channelSecret, signature)) {
-      throw new line.exceptions.SignatureValidationFailed("signature validation failed", signature)
-    }
 
     // 將 JSON 轉為 JavaScript 物件
     const objBody = JSON.parse(body);
@@ -43,7 +39,7 @@ try {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Hello from Netlify" }),
+      body: JSON.stringify({ message: "聽嘸哩共蝦咪..." }),
     }
   } catch (error) {
     console.log(error)
