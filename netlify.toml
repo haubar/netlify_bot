@@ -10,9 +10,15 @@
 #   publish = "build"
 
 [[redirects]]
-  from = "/webhook"
+  from = "/hello"
+  to = "/.netlify/functions/hello"
+  status = 200
+
+[[redirects]]
+  from = "/stock"
   to = "/.netlify/functions/stock"
   status = 200
+
 
 
 # [[redirects]]
@@ -25,6 +31,3 @@
 #   to = "https://dev.localweather.io/:splat"
 #   status = 301
 
-[[edge_functions]]
-function = "test"
-path = "/test"
