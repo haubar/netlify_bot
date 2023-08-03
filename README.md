@@ -1,2 +1,2 @@
-# stock_bot
-line bot for stock
+# linebot use netlify
+line bot for netlify
