@@ -1,5 +1,5 @@
 [build]
-  functions = "stock"
+  functions = "bot"
 
 # [context.production]
 #   command = "yarn start"
@@ -24,3 +24,7 @@
 #   from = "https://dev-localweather-io.netlify.com/*"
 #   to = "https://dev.localweather.io/:splat"
 #   status = 301
+
+[[edge_functions]]
+function = "test"
+path = "/test"
