@@ -24,7 +24,8 @@ const handler = async (event) => {
     //解析關鍵字
     const keyword = event.keyword.trim() || ""
     if(!isNaN(keyword)) {
-      return getstock(keyword) || 0
+      return 0
+      // return getstock(keyword) || 0
     }
     return keyword
   } catch (error) {
