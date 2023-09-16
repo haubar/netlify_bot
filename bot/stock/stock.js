@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk')
 
-const message = require('./lib/message');
+const message = require('../lib/message');
 
 // const fetch = require("node-fetch")
 // const airtable = require('airtable')
