@@ -28,7 +28,7 @@ const handler = async (event) => {
     }
     return keyword
   } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+    return 0
   }
 }
 
