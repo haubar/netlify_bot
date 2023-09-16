@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk')
 
-// const message = require('./lib/message');
+const message = require('./lib/message');
 
 // const fetch = require("node-fetch")
 // const airtable = require('airtable')
@@ -25,6 +25,7 @@ const handler = async (event) => {
     if (event.type !== 'message' || event.message.type !== 'text') {
         return Promise.resolve(null)
     }
+
     
     const { text } = event.message
     const { replyToken } = event
