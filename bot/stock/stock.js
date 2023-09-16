@@ -1,7 +1,7 @@
 const line = require('@line/bot-sdk')
 
 const {message} = require('../lib/message')
-// const parse = require('./lib/parser')
+// const parse = require('../lib/parser')
 // const fetch = require("node-fetch")
 // const airtable = require('airtable')
 
@@ -26,7 +26,7 @@ const handler = async (event) => {
         return Promise.resolve(null)
     }
 
-    let stock_id = new message(event.message)
+    let stock_id = message(event.message)
     
     // const { text } = event.message
     const { text } = stock_id
