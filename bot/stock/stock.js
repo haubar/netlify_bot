@@ -26,7 +26,7 @@ const handler = async (event) => {
         return Promise.resolve(null)
     }
 
-    let stock_id = message(event.message)
+    let stock_id = new message(event.message)
     
     // const { text } = event.message
     const { text } = stock_id
