@@ -26,12 +26,15 @@ const handler = async (event) => {
         return Promise.resolve(null)
     }
 
+    let stock_id = new message(event.message)
     
-    const { text } = event.message
+    // const { text } = event.message
+    const { text } = stock_id
     const { replyToken } = event
     const response = {
         type: 'text',
-        text: `我還沒空支援這個格式...${text}`,
+        // text: `我還沒空支援這個格式...${text}`,
+        text: `這隻股票代號是 - ${text}`,
     }
     await client.replyMessage(replyToken, response)
   }
