@@ -1,6 +1,14 @@
 // const message = require('../lib/message')
 // const fstock = require('../lib/stock')
 
+const line = require('@line/bot-sdk')
+// line channel設定
+const clientConfig = {
+  channelAccessToken: process.env.CHANNEL_TOKEN,
+  channelSecret: process.env.CHANNEL_SECRET
+}
+const client = new line.Client(clientConfig)
+
 const handler = async (event) => {
 
   const body = event.body

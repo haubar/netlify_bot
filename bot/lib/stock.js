@@ -6,7 +6,9 @@ const stockdb = new airtable({
 //找尋名稱
 const getstock = async (string) => {
   try {
-    let filter = 'FIND("' +string+ '", {name}) > 0'
+    let filter = 'FIND("' + string + '", {name}) > 0'
+    // let filter = 'SEARCH("' + string + '", {name})'
+    // let filter = 'SEARCH("' + string + '", {name})'
     const records = await base('stock_list').select({
       maxRecords: 1,
       view: 'Grid view',
