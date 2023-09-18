@@ -1,5 +1,5 @@
 const message = require('../lib/message')
-const fstock = require('../lib/stock')
+// const fstock = require('../lib/stock')
 
 const handler = async (event) => {
 
@@ -9,7 +9,7 @@ const handler = async (event) => {
       // JSON格式轉換物件
       const objBody = JSON.parse(body);
       // 觸發事件轉linebot處理
-      await Promise.all(objBody.events.map(message))
+      // await Promise.all(objBody.events.map(message))
 
       //無觸發的預設返回訊息
       return {
