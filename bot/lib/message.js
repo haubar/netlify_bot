@@ -94,4 +94,4 @@ const getKeyword = async (event) => {
 }
 
 
-module.exports = {botEvent}, {getKeyword}
+module.exports = {botEvent}
