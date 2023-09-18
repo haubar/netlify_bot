@@ -32,7 +32,7 @@ const handler = async (event) => {
 }
 
 
-const botEvent = async (event, context) => {
+const botEvent = async (event) => {
     
   //只接收訊息格式
   if (event.type !== 'message') {
