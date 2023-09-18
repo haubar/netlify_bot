@@ -41,58 +41,58 @@ const botEvent = async (event, context) => {
 
   const type = event.message.type || ""
   switch (type) {
-    case 'text':
-      const { text } = event.message
-      const res = {
-          type: 'text',
-          text: `我收到的訊息是.... ${text}`,
-      }
-      break
-    case 'sticker':
-      const res = {
-        "type": "sticker",
-        "packageId": "1",
-        "stickerId": "1"
-      }
-      break
-    case 'image':
-      const res = {
-        "type": "image",
-        "originalContentUrl": "圖片網址",
-        "previewImageUrl": "縮圖網址"
-      }
-      break
-    case 'video':
+    // case 'text':
+    //   const { text } = event.message
+    //   const res = {
+    //       type: 'text',
+    //       text: `我收到的訊息是.... ${text}`,
+    //   }
+    //   break
+    // case 'sticker':
+    //   const res = {
+    //     "type": "sticker",
+    //     "packageId": "1",
+    //     "stickerId": "1"
+    //   }
+    //   break
+    // case 'image':
+    //   const res = {
+    //     "type": "image",
+    //     "originalContentUrl": "圖片網址",
+    //     "previewImageUrl": "縮圖網址"
+    //   }
+    //   break
+    // case 'video':
       
-      break
-    case 'audio':
-      const res = {
-        "type": "audio",
-        "originalContentUrl": "聲音檔網址",
-        "duration": 60000
-      }
-      break
-    case 'location':
-      const res = {
-        "type": "location",
-        "title": "第一行文字",
-        "address": "第二行文字",
-        "latitude": 35.65910807942215,
-        "longitude": 139.70372892916203
-      }
-      break
-    case 'imagemap':
-      const res = {
-        type: 'text',
-        text: `還沒實作這個格式`,
-      }
-      break
-    case 'template':
-      const res = {
-        type: 'text',
-        text: `還沒實作這個格式`,
-      }
-      break
+    //   break
+    // case 'audio':
+    //   const res = {
+    //     "type": "audio",
+    //     "originalContentUrl": "聲音檔網址",
+    //     "duration": 60000
+    //   }
+    //   break
+    // case 'location':
+    //   const res = {
+    //     "type": "location",
+    //     "title": "第一行文字",
+    //     "address": "第二行文字",
+    //     "latitude": 35.65910807942215,
+    //     "longitude": 139.70372892916203
+    //   }
+    //   break
+    // case 'imagemap':
+    //   const res = {
+    //     type: 'text',
+    //     text: `還沒實作這個格式`,
+    //   }
+    //   break
+    // case 'template':
+    //   const res = {
+    //     type: 'text',
+    //     text: `還沒實作這個格式`,
+    //   }
+    //   break
     default:
       const res = {
         type: 'text',
