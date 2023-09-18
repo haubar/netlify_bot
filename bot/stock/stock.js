@@ -39,15 +39,15 @@ const botEvent = async (event) => {
       return Promise.resolve(null)
   }
 
-  const type = event.message.type || ""
-  switch (type) {
-    case 'text':
-      const { text } = event.message
-      const response = {
-          type: 'text',
-          text: `我收到的訊息是.... ${text}`,
-      }
-      break
+  const {type} = event.message.type
+  // switch (type) {
+  //   case 'text':
+  //     const { text } = event.message
+  //     const response = {
+  //         type: 'text',
+  //         text: `我收到的訊息是.... ${text}`,
+  //     }
+  //     break
     // case 'sticker':
     //   const res = {
     //     "type": "sticker",
@@ -93,16 +93,20 @@ const botEvent = async (event) => {
     //     text: `還沒實作這個格式`,
     //   }
     //   break
-    default:
-      const response = {
-        type: 'text',
-        text: `我收到的格式是.... ${type}`,
-      }
-      break
-  }
+  //   default:
+  //     const response = {
+  //       type: 'text',
+  //       text: `我收到的格式是.... ${type}`,
+  //     }
+  //     break
+  // }
 
   const { replyToken } = event
   // const { response } = res
+  const response = {
+          type: 'text',
+          text: `我收到的格式是.... ${type}`,
+        }
 
   await client.replyMessage(replyToken, response)
 }
