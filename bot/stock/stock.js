@@ -39,7 +39,7 @@ const botEvent = async (event) => {
       return Promise.resolve(null)
   }
 
-  const {type} = event.message.type
+  const type = event.message.type
   // switch (type) {
   //   case 'text':
   //     const { text } = event.message
