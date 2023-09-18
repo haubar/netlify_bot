@@ -39,7 +39,7 @@ const botEvent = async (event) => {
       return Promise.resolve(null)
   }
 
-  const {type} = event.message.type
+  const type = event.message.type
   // switch (type) {
   //   case 'text':
   //     const { text } = event.message
@@ -102,7 +102,7 @@ const botEvent = async (event) => {
   // }
 
   const { replyToken } = event
-  // const { response } = res
+  // const response = res
   const response = {
           type: 'text',
           text: `我收到的格式是.... ${type}`,
