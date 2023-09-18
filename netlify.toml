@@ -16,7 +16,7 @@
 
 [[redirects]]
   from = "/stock"
-  to = "/.netlify/functions/stock"
+  to = "/.netlify/functions/main"
   status = 200
 
 
