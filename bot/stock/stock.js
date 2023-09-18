@@ -39,8 +39,8 @@ const botEvent = async (event, context) => {
       return Promise.resolve(null)
   }
 
-  // const type = event.message.type || ""
-  switch (event.message.type) {
+  const type = event.message.type || ""
+  switch (type) {
     case 'text':
       const { text } = event.message
       const res = {
@@ -102,7 +102,7 @@ const botEvent = async (event, context) => {
   }
 
   const { replyToken } = event
-  const response = res
+  const { response } = res
 
   await client.replyMessage(replyToken, response)
 }
