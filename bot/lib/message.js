@@ -89,14 +89,14 @@ const botEvent = async (event) => {
 function getKeyword(keyword) {
   try {
       //解析關鍵字
-      let keyword = keyword.trim() || ""
+      let keyword = keyword.trim()
       if(!isNaN(keyword)) {
           return '非數字'
           // return getstock(keyword) || 0
       }
       return keyword
   } catch (error) {
-      return 0
+      return error.toString()
   }
 }
 
