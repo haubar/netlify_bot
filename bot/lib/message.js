@@ -20,7 +20,7 @@ const botEvent = async (event) => {
   let res = {}
   switch (type) {
     case 'text':
-      let { text } = getKeyword(event.message)
+      let { text } = getKeyword(event.message.text)
       res = {
           type: 'text',
           text: `我收到的訊息是.... ${text}`,
@@ -88,15 +88,15 @@ const botEvent = async (event) => {
 
 const getKeyword = async (keyword) => {
   try {
-    //解析關鍵字
-    let keyword = keyword.trim() || ""
-    console.info("keyword",keyword)
-    if(!isNaN(keyword)) {
-        return getstock(keyword) || 0
-    }
-    return keyword
+      //解析關鍵字
+      let keyword = keyword.trim() || ""
+      console.info("keyword",keyword)
+      if(!isNaN(keyword)) {
+          return getstock(keyword) || 0
+      }
+      return keyword
   } catch (error) {
-    return false
+      return false
   }
 }
 
