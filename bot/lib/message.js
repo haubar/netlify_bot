@@ -86,8 +86,8 @@ const botEvent = async (event) => {
 }
 
 
-const getKeyword = async (keyword) => {
-  return keyword
+const getKeyword = async (event) => {
+  return event
   try {
       //解析關鍵字
       let keyword = keyword.trim() || ""
