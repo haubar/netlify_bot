@@ -1,7 +1,6 @@
 const message = require('../lib/message')
 // const fstock = require('../lib/stock')
 
-// const line = require('@line/bot-sdk')
 
 const handler = async (event) => {
 
