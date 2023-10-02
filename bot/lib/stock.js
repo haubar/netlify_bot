@@ -14,7 +14,11 @@ const getstock = async (string) => {
       view: 'Grid view',
       filterByFormula: filter
     }).all()
-    return records[0].get('no') || 0
+    if(records.length > 0){
+      return records[0].get('no')
+    }
+    return 0
+   
   } catch (error) {
       throw error
   }
