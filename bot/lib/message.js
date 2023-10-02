@@ -20,8 +20,7 @@ const botEvent = async (event) => {
   let res = {}
   switch (type) {
     case 'text':
-      let  text = event.message.text
-      // let  text  = getKeyword(event.message.text)
+      let text = getKeyword(event.message.text)
       // let { text } = (event.message)
       res = {
           type: 'text',
@@ -86,7 +85,7 @@ const botEvent = async (event) => {
 
   await client.replyMessage(replyToken, response)
 }
-
+/*
 function getKeyword(keyword) {
   try {
       //解析關鍵字
@@ -99,8 +98,9 @@ function getKeyword(keyword) {
       return 0
   }
 }
-/*
-const getKeyword = async (event) => {
+*/
+
+const getKeyword = async (keyword) => {
   return event
   try {
       //解析關鍵字
@@ -114,7 +114,7 @@ const getKeyword = async (event) => {
       return false
   }
 }
-*/
+
 
 
 module.exports = {botEvent, getKeyword}
