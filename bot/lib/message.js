@@ -19,7 +19,8 @@ const botEvent = async (event) => {
   let res = {}
   switch (type) {
     case 'text':
-      const { text } = event.message
+      let { text } = event.message
+      text = getKeyword(text)
       res = {
           type: 'text',
           text: `我收到的訊息是.... ${text}`,
