@@ -20,7 +20,7 @@ const botEvent = async (event) => {
   let res = {}
   switch (type) {
     case 'text':
-      let text = getKeyword(event.message.text)
+      let text = await getKeyword(event.message.text)
       // let { text } = (event.message)
       res = {
           type: 'text',
