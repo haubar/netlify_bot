@@ -88,6 +88,7 @@ const botEvent = async (event) => {
 
 
 function getKeyword(keyword) {
+  return keyword.trim()
   try {
       //解析關鍵字
       let keyword = keyword.trim()
