@@ -86,6 +86,7 @@ const botEvent = async (event) => {
   await client.replyMessage(replyToken, response)
 }
 
+
 function getKeyword(keyword) {
   try {
       //解析關鍵字
@@ -119,4 +120,4 @@ const getKeyword = async (keyword) => {
 
 
 
-module.exports = {botEvent, getKeyword}
+module.exports = {botEvent}
