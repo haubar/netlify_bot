@@ -1,5 +1,5 @@
 const line = require('@line/bot-sdk')
-const getstock = require('stock')
+const stock = require('stock')
 
 // line channel設定
 const clientConfig = {
@@ -93,7 +93,7 @@ function getKeyword(keyword) {
       let text = keyword.trim()
       //非數字
       if(!!isNaN(text)) {
-          return getstock(text) || 0
+          return stock.getstack(text) || 0
       }
       return text
   } catch (error) {
@@ -101,22 +101,6 @@ function getKeyword(keyword) {
   }
 }
 
-/*
-const getKeyword = async (keyword) => {
-  return keyword.toString()
-  try {
-      //解析關鍵字
-      let keyword = keyword.trim() || ""
-      console.info("keyword",keyword)
-      if(!isNaN(keyword)) {
-          return getstock(keyword) || 0
-      }
-      return keyword
-  } catch (error) {
-      return false
-  }
-}
-*/
 
 
 

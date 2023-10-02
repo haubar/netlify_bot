@@ -20,6 +20,15 @@ const getstock = async (string) => {
   }
 }
 
+const findstock = async (id) => {
+  try {
+   
+    return id
+  } catch (error) {
+      throw error
+  }
+}
 
 
-module.exports = { getStock }
+
+module.exports = { getstock, findstock }
