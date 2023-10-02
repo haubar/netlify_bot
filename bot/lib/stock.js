@@ -30,4 +30,4 @@ const findstock = async (id) => {
 
 
 
-module.exports = { getstock, findstock }
+module.exports = { getstock }
