@@ -1,4 +1,5 @@
 const line = require('@line/bot-sdk')
+const getstock = require('../lib/stock')
 
 // line channel設定
 const clientConfig = {
@@ -19,8 +20,7 @@ const botEvent = async (event) => {
   let res = {}
   switch (type) {
     case 'text':
-      let { text } = event.message
-      text = getKeyword(text)
+      let { text } = getKeyword(event.message)
       res = {
           type: 'text',
           text: `我收到的訊息是.... ${text}`,
@@ -86,13 +86,12 @@ const botEvent = async (event) => {
 }
 
 
-const getKeyword = async (event) => {
+const getKeyword = async (keyword) => {
   try {
     //解析關鍵字
-    const keyword = event.keyword.trim() || ""
+    let keyword = keyword.trim() || ""
     if(!isNaN(keyword)) {
-      return 0
-      // return getstock(keyword) || 0
+        return getstock(keyword) || 0
     }
     return keyword
   } catch (error) {
