@@ -90,12 +90,13 @@ const getKeyword = async (keyword) => {
   try {
     //解析關鍵字
     let keyword = keyword.trim() || ""
+    console.info("keyword",keyword)
     if(!isNaN(keyword)) {
         return getstock(keyword) || 0
     }
     return keyword
   } catch (error) {
-    return 0
+    return false
   }
 }
 

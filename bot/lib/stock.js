@@ -5,6 +5,7 @@ const stockdb = new airtable({
 
 //找尋名稱
 const getstock = async (string) => {
+  console.info("string",string)
   try {
     let filter = 'FIND("' + string + '", {name}) > 0'
     // let filter = 'SEARCH("' + string + '", {name})'
