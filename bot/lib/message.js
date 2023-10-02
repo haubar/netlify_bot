@@ -91,12 +91,12 @@ function getKeyword(keyword) {
   return keyword.trim()
   try {
       //解析關鍵字
-      let keyword = keyword.trim()
-      if(!isNaN(keyword)) {
+      let text = keyword.trim()
+      if(!isNaN(text)) {
           return '非數字'
           // return getstock(keyword) || 0
       }
-      return keyword
+      return text
   } catch (error) {
       return error.toString()
   }
