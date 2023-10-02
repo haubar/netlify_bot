@@ -85,8 +85,9 @@ const botEvent = async (event) => {
 
   await client.replyMessage(replyToken, response)
 }
-/*
+
 function getKeyword(keyword) {
+  return keyword
   try {
       //解析關鍵字
       let keyword = keyword.trim() || ""
@@ -98,8 +99,8 @@ function getKeyword(keyword) {
       return 0
   }
 }
-*/
 
+/*
 const getKeyword = async (keyword) => {
   return keyword.toString()
   try {
@@ -114,6 +115,7 @@ const getKeyword = async (keyword) => {
       return false
   }
 }
+*/
 
 
 
