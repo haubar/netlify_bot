@@ -40,24 +40,23 @@ const botEvent = async (event) => {
   }
 
   const { type } = event.message
-  const res = {}
   switch (type) {
     case 'text':
       const { text } = event.message
-      res = {
+      let res = {
           type: 'text',
           text: `我收到的訊息是.... ${text}`,
       }
       break
     case 'sticker':
-      res = {
+      let res = {
         "type": "sticker",
         "packageId": "1",
         "stickerId": "1"
       }
       break
     case 'image':
-      res = {
+      let res = {
         "type": "image",
         "originalContentUrl": "圖片網址",
         "previewImageUrl": "縮圖網址"
@@ -67,14 +66,14 @@ const botEvent = async (event) => {
       
       break
     case 'audio':
-      res = {
+      let res = {
         "type": "audio",
         "originalContentUrl": "聲音檔網址",
         "duration": 60000
       }
       break
     case 'location':
-      res = {
+      let res = {
         "type": "location",
         "title": "第一行文字",
         "address": "第二行文字",
@@ -83,19 +82,19 @@ const botEvent = async (event) => {
       }
       break
     case 'imagemap':
-      res = {
+      let res = {
         type: 'text',
         text: `還沒實作這個格式`,
       }
       break
     case 'template':
-      res = {
+      let res = {
         type: 'text',
         text: `還沒實作這個格式`,
       }
       break
     default:
-      res = {
+      let res = {
         type: 'text',
         text: `我收到的格式是.... ${type}`,
       }
