@@ -9,7 +9,7 @@ const getstock = async (string) => {
     let filter = 'FIND("' + string + '", {name}) > 0'
     // let filter = 'SEARCH("' + string + '", {name})'
     // let filter = 'SEARCH("' + string + '", {name})'
-    const records = await base('stock_list').select({
+    const records = await stockdb('stock_list').select({
       maxRecords: 1,
       view: 'Grid view',
       filterByFormula: filter
