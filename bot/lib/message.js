@@ -8,30 +8,32 @@ const clientConfig = {
 const client = new line.Client(clientConfig)
 
 //line動作、邏輯判斷
-const botEvent = async (event, context) => {
+const botEvent = async (event) => {
     
   //只接收訊息格式
   if (event.type !== 'message') {
       return Promise.resolve(null)
   }
 
-  switch (event.message.type) {
+  const { type } = event.message
+  let res = {}
+  switch (type) {
     case 'text':
       const { text } = event.message
-      const res = {
+      res = {
           type: 'text',
-          text: `我收到的訊息是.... ${text}`
+          text: `我收到的訊息是.... ${text}`,
       }
       break
     case 'sticker':
-      const res = {
+      res = {
         "type": "sticker",
         "packageId": "1",
         "stickerId": "1"
       }
       break
     case 'image':
-      const res = {
+      res = {
         "type": "image",
         "originalContentUrl": "圖片網址",
         "previewImageUrl": "縮圖網址"
@@ -41,14 +43,14 @@ const botEvent = async (event, context) => {
       
       break
     case 'audio':
-      const res = {
+      res = {
         "type": "audio",
         "originalContentUrl": "聲音檔網址",
         "duration": 60000
       }
       break
     case 'location':
-      const res = {
+      res = {
         "type": "location",
         "title": "第一行文字",
         "address": "第二行文字",
@@ -57,24 +59,28 @@ const botEvent = async (event, context) => {
       }
       break
     case 'imagemap':
-      const res = {
+      res = {
         type: 'text',
-        text: `還沒實作這個格式`
+        text: `還沒實作這個格式`,
       }
       break
     case 'template':
-      const res = {
+      res = {
         type: 'text',
-        text: `還沒實作這個格式`
+        text: `還沒實作這個格式`,
       }
       break
     default:
+      res = {
+        type: 'text',
+        text: `我收到的格式是.... ${type}`,
+      }
       break
   }
 
   const { replyToken } = event
   const response = res
-  
+
   await client.replyMessage(replyToken, response)
 }
 
@@ -94,4 +100,4 @@ const getKeyword = async (event) => {
 }
 
 
-module.exports = {botEvent}
+module.exports = {botEvent, getKeyword}
