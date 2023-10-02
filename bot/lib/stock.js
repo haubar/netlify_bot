@@ -15,6 +15,7 @@ const getstock = async (string) => {
       view: 'Grid view',
       filterByFormula: filter
     }).all()
+    console.log(records)
     if(records.length > 0){
       return records[0].get('no')
     }
