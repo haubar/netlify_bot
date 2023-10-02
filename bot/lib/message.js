@@ -101,7 +101,7 @@ function getKeyword(keyword) {
 */
 
 const getKeyword = async (keyword) => {
-  return keyword
+  return keyword.toString()
   try {
       //解析關鍵字
       let keyword = keyword.trim() || ""
