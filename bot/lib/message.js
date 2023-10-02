@@ -1,5 +1,6 @@
 const line = require('@line/bot-sdk')
 const stock = require('./stock')
+const format = require('./format')
 
 // line channel設定
 const clientConfig = {
