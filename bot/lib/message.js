@@ -20,7 +20,7 @@ const botEvent = async (event, context) => {
       const { text } = event.message
       const res = {
           type: 'text',
-          text: `我收到的訊息是.... ${text}`,
+          text: `我收到的訊息是.... ${text}`
       }
       break
     case 'sticker':
@@ -59,13 +59,13 @@ const botEvent = async (event, context) => {
     case 'imagemap':
       const res = {
         type: 'text',
-        text: `還沒實作這個格式`,
+        text: `還沒實作這個格式`
       }
       break
     case 'template':
       const res = {
         type: 'text',
-        text: `還沒實作這個格式`,
+        text: `還沒實作這個格式`
       }
       break
     default:
