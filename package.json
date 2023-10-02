@@ -4,7 +4,7 @@
   "description": "STOCK Line BOT",
   "main": "index.js",
   "scripts": {
-    "start": "node bot/stock/main.js",
+    "start": "node bot/stock/stock.js",
     "pretest": "eslint index.js lib/**/*.js test/**/*.js",
     "test": "mocha --timeout 5000",
     "lint": "eslint index.js lib/*.js"
