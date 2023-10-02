@@ -1,4 +1,4 @@
-let Data = function (data) {
+let data = function (data) {
   
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
