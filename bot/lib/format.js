@@ -8,13 +8,13 @@ let data = function (data) {
     this.down = '跌停價:' + data.w | ""
     this.now_qty = '當盤成交量:' + data.tv | ""
     this.all_qty = '累積成交量:' + data.v | ""
-    this.yd = '昨收價:' + parseFloat(data.y) 
+    this.yd = '昨收價:' + getprice(data.y) 
     this.now_buy = '現買價:' + getprice(data.b) | ""
     this.now_sell = '現賣價:'+ getprice(data.a) | ""
-    this.now_level = '漲跌:' + (getprice(data.b) - parseFloat(data.y)) | ""
+    this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y)) | ""
     this.now_sell_amont = '現賣量:' + getprice(data.f) | ""
     this.now_buy_amont = '現買量:' + getprice(data.g) | ""
-    this.disc = '最低手續費用計算:' + getprice(data.b)*1000*0.2697/100 | ""
+    this.disc = '最低手續費用計算:' + getfee(data.b) | ""
     this.tick = getick(data.b) | ""
     
     let msgArray = [ this.name, 
@@ -36,14 +36,34 @@ let data = function (data) {
     this.msg = msgArray.join("\n")
 }
 
-
+// 取價
 function getprice(price) {
-    return parseFloat((price).split("_", 1))
+    if(price.includes("_")){
+        return parseFloat((price).split("_", 1))
+    }
+    return parseFloat(price)
 }
 
+// 手續費
+function getfee(price) {
+    return (getprice(price) * 1000 * 0.2697/100).toFixed(2)
+}
+
+// 檔位判斷
+function getpart(price) {
+    price = getprice(price)
+    return price<10?0.01:(price<50?0.05:(price<100?0.1:(price<500?0.5:(price<1000?1:5)))); 
+}
+
+//輸出標價資訊
 function getick(price) {
-    return getprice(price) * 1000 * 0.2697/100
+    price = getprice(price)
+    let disc = getfee(price)
+    let level = getpart(price)
+    let part = Math.ceil(disc/(level*1000))
+    increase_price = (price + (part*level)).toFixed(2)
+    let msg = '最少要跳'+part+'檔,'+increase_price+'賣出'
+    return msg
 }
-
 
 module.exports = data
