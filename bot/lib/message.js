@@ -22,10 +22,11 @@ const botEvent = async (event) => {
   switch (type) {
     case 'text':
       let text = await getKeyword(event.message.text)
-      // let { text } = (event.message)
+      text = await stock.findstock(text)
       res = {
           type: 'text',
-          text: `我收到的訊息是.... ${text}`,
+          // text: `我收到的訊息是.... ${text}`,
+          text: `${text}`,
       }
       break
     case 'sticker':
