@@ -19,7 +19,8 @@
     "@line/bot-sdk": "^7.3.0",
     "dotenv": "^8.2.0",
     "node-fetch": "2",
-    "airtable": "^0.8.1"
+    "airtable": "^0.8.1",
+    "axios/axios": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^3.7.1",

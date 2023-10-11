@@ -1,4 +1,6 @@
 const airtable = require('airtable')
+const axios = require('axios')
+
 const stockdb = new airtable({
     apiKey: process.env.airtableKey
   }).base('app2oVW62FODpXmq0')
