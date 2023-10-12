@@ -1,3 +1,4 @@
+const format = require('./format')
 const airtable = require('airtable')
 const axios = require('axios')
 const rp = require('request-promise').defaults({ jar: true })
@@ -50,12 +51,10 @@ const findstock = async (id) => {
           })
           */
           rp({ 'uri': urls[0] }).then(function(response) {
-            console.info("response",response)
             let res = JSON.parse(response)
-            console.info("res",res)
             let info = res.msgArray[0]
             if(!!info){
-              return info
+              return new format(info)
             }
           })
             
