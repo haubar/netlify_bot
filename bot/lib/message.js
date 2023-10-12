@@ -22,7 +22,8 @@ const botEvent = async (event) => {
   switch (type) {
     case 'text':
       let text = await getKeyword(event.message.text)
-      text = await stock.findstock(text)
+      // text = await stock.findstock(text)
+      text = (text)
       res = {
           type: 'text',
           // text: `我收到的訊息是.... ${text}`,
