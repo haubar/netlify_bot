@@ -61,7 +61,7 @@ const findstock = async (id) => {
             
 
     } catch (error) {
-        return `出錯囉 ${id}`
+        return "出錯囉" + id
     }
 
     
