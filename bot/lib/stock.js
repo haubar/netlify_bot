@@ -1,5 +1,6 @@
 const airtable = require('airtable')
 const axios = require('axios')
+const rp = require('request-promise')
 
 const stockdb = new airtable({
     apiKey: process.env.airtableKey
@@ -28,7 +29,7 @@ const getstock = async (string) => {
 
 const findstock = async (id) => {
     try {
-        let urls = ''
+        let urls
         if(id == '00') {
           urls = ['https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t'+ id +'.tw&json=1&delay=0']
         } else {
@@ -38,6 +39,7 @@ const findstock = async (id) => {
           ]
         }
     
+        /*
        let result = await Promise.all(urls.map(url => fetch(url)))
           .then(res => res.json())
           .then(res => {
@@ -46,8 +48,15 @@ const findstock = async (id) => {
           .catch(err => {
             console.log("沒有這筆代號資料喲, 咩噗Q口Q")
           })
-        
-        return result
+          */
+          rp({ 'uri':urls[0] }).then(function(response) {
+            let res = JSON.parse(response)
+            let info = res.msgArray[0]
+            if(!!info){
+              return info
+            }
+          })
+            
 
     } catch (error) {
         throw error
