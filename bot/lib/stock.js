@@ -30,7 +30,7 @@ const getstock = async (string) => {
 const findstock = async (id) => {
     try {
         let urls
-        if(id == '00') {
+        if(id == '00' || id == 0) {
           urls = ['https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t'+ id +'.tw&json=1&delay=0']
         } else {
           urls = [
@@ -49,9 +49,10 @@ const findstock = async (id) => {
             console.log("沒有這筆代號資料喲, 咩噗Q口Q")
           })
           */
-          rp({ 'uri':urls[0] }).then(function(response) {
+          rp({ 'uri': urls[0] }).then(function(response) {
+            console.info("response",response)
             let res = JSON.parse(response)
-            console.log(res)
+            console.info("res",res)
             let info = res.msgArray[0]
             if(!!info){
               return info
