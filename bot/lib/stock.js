@@ -1,6 +1,6 @@
 const airtable = require('airtable')
 const axios = require('axios')
-const rp = require('request-promise')
+const rp = require('request-promise').defaults({ jar: true })
 
 const stockdb = new airtable({
     apiKey: process.env.airtableKey
