@@ -39,25 +39,14 @@ const findstock = async (id) => {
             'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=otc_'+ id +'.tw&json=1&delay=0'
           ]
         }
-    
-        /*
-       let result = await Promise.all(urls.map(url => fetch(url)))
-          .then(res => res.json())
-          .then(res => {
-            return res.msgArray[0]
-          })
-          .catch(err => {
-            console.log("沒有這筆代號資料喲, 咩噗Q口Q")
-          })
-          */
-          rp({ 'uri': urls[0] }).then(function(response) {
-            let res = JSON.parse(response)
-            let info = res.msgArray[0]
-            if(!!info){
-              return new format(info)
+
+        Object.values(urls).map(url => {
+             await getinfo(url)
+            if (condition) {
+              
             }
-          })
             
+        })
 
     } catch (error) {
         return "出錯囉" + id
@@ -66,6 +55,29 @@ const findstock = async (id) => {
     
 
  
+}
+
+
+async function getinfo(url) {
+    await rp( {'uri': url} ).then(function(response) {
+      let res = JSON.parse(response)
+      let info = res.msgArray[0] | ""
+      if(!!info){
+          return new format(info)
+      }
+      return info
+    })
+}
+
+async function getinfopromiss(url) {
+    return result = await Promise.all(urls.map(url => fetch(url)))
+      .then(res => res.json())
+      .then(res => {
+          return res.msgArray[0]
+      })
+      .catch(err => {
+        console.log("沒有這筆代號資料喲, 咩噗Q口Q")
+      }) 
 }
 
 

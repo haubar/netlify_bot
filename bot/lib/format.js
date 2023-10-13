@@ -1,5 +1,9 @@
 let data = function (data) {
   
+    if (!data | !Array.isArray(data)) {
+        return false
+    } 
+
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
     this.hight = '最高價:' + data.h | ""
