@@ -68,7 +68,7 @@ async function getinfo(url) {
           // return new format(info)
       // }
       // return info
-    // })
+    })
 }
 
 async function getinfopromiss(url) {
