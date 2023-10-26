@@ -43,10 +43,11 @@ const findstock = async (id) => {
         // usernames.map(async (username) => {return await simulateFetchData(username);})
         Object.values(urls).map(url => {
             console.log(url)
-            // let result = await getinfo(url)
-            // if (condition) {
+            let result = await getinfo(url)
+            console.log(result)
+            if (result) {
               
-            // }
+            }
         })
 
     } catch (error) {
