@@ -40,21 +40,18 @@ const findstock = async (id) => {
           ]
         }
 
+        // usernames.map(async (username) => {return await simulateFetchData(username);})
         Object.values(urls).map(url => {
-             await getinfo(url)
-            if (condition) {
+            console.log(url)
+            // let result = await getinfo(url)
+            // if (condition) {
               
-            }
-            
+            // }
         })
 
     } catch (error) {
         return "出錯囉" + id
-    }
-
-    
-
- 
+    } 
 }
 
 
@@ -63,6 +60,7 @@ async function getinfo(url) {
       let res = JSON.parse(response)
       let info = res.msgArray[0] | ""
       if(!!info){
+          console.log(info)
           return new format(info)
       }
       return info
