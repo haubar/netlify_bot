@@ -45,9 +45,9 @@ const findstock = async (id) => {
            
             let result = await getinfo(url)
             console.log(result)
-            if (result) {
+            // if (result) {
               
-            }
+            // }
         })
 
     } catch (error) {
@@ -59,16 +59,16 @@ const findstock = async (id) => {
 async function getinfo(url) {
     console.log('get info')
     console.log(url)
-    await rp( {'uri': url} ).then(function(response) {
-      let res = JSON.parse(response)
-      console.log(res)
+    // await rp( {'uri': url} ).then(function(response) {
+    //   let res = JSON.parse(response)
+    //   console.log(res)
       // let info = res.msgArray[0] | ""
       // if(!!info){
       //     console.log(info)
       //     return new format(info)
       // }
       // return info
-    })
+    // })
 }
 
 async function getinfopromiss(url) {
