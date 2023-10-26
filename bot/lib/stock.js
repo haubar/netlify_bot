@@ -42,7 +42,7 @@ const findstock = async (id) => {
 
         // usernames.map(async (username) => {return await simulateFetchData(username);})
         Object.values(urls).map(url => {
-            console.log(url)
+           
             let result = await getinfo(url)
             console.log(result)
             if (result) {
@@ -57,14 +57,17 @@ const findstock = async (id) => {
 
 
 async function getinfo(url) {
+    console.log('get info')
+    console.log(url)
     await rp( {'uri': url} ).then(function(response) {
       let res = JSON.parse(response)
-      let info = res.msgArray[0] | ""
-      if(!!info){
-          console.log(info)
-          return new format(info)
-      }
-      return info
+      console.log(res)
+      // let info = res.msgArray[0] | ""
+      // if(!!info){
+      //     console.log(info)
+      //     return new format(info)
+      // }
+      // return info
     })
 }
 
