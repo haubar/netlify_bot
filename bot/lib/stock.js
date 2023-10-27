@@ -43,6 +43,7 @@ const findstock = async (id) => {
      
         for (let url of urls) {
           let res = await getinfo(url)
+          console.info("res", res)
           // 有資料就回傳中斷
           if(!!res) {
             return res
@@ -66,17 +67,6 @@ async function getinfo(url) {
 
     })
   
-}
-
-async function getinfopromiss(url) {
-    return result = await Promise.all(urls.map(url => fetch(url)))
-      .then(res => res.json())
-      .then(res => {
-          return res.msgArray[0]
-      })
-      .catch(err => {
-        console.log("沒有這筆代號資料喲, 咩噗Q口Q")
-      }) 
 }
 
 

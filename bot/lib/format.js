@@ -47,7 +47,6 @@ var data = function (data) {
 
 // 取價
 function getprice(price) {
-    console.log(typeof price)
     if(typeof price === 'string'){
         if(price.includes("_")){
             return parseFloat(price.split("_", 1))
@@ -80,8 +79,8 @@ function getick(price) {
     console.info('part', part)
     let inc_price = price + (part*level)
     console.info('inc', inc_price)
-    // let msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
-    return msg = ''
+    return msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
+    
 }
 
 module.exports = data
