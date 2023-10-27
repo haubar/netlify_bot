@@ -19,25 +19,25 @@ var data = function (data) {
     // this.tick = getick(data.b) | ""
     console.log(this.name)
    
-    let msgArray = [ this.name, 
-                     this.fullname, 
-                     this.now_level, 
-                     this.now_buy, 
-                     this.now_buy_amont, 
-                     this.now_sell, 
-                     this.now_sell_amont, 
-                     this.hight,
-                     this.lock, 
-                     this.low, 
-                     this.down,
-                     this.now_qty, 
-                     this.all_qty, 
-                     this.disc, 
-                     this.tick ]
+    // let msgArray = [ this.name, 
+    //                  this.fullname, 
+    //                  this.now_level, 
+    //                  this.now_buy, 
+    //                  this.now_buy_amont, 
+    //                  this.now_sell, 
+    //                  this.now_sell_amont, 
+    //                  this.hight,
+    //                  this.lock, 
+    //                  this.low, 
+    //                  this.down,
+    //                  this.now_qty, 
+    //                  this.all_qty, 
+    //                  this.disc, 
+    //                  this.tick ]
 
-    msg = msgArray.join("\n")
-    console.info("msg ",msg)
-    return msg
+    // msg = msgArray.join("\n")
+    // console.info("msg ",msg)
+    // return msg
 }
 
 // 取價
