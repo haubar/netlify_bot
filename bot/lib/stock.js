@@ -79,7 +79,7 @@ function getinfo(url) {
     //   })
 
 
-    return await rp.get(url).then(function(response) {
+    return rp.get(url).then(function(response) {
       console.log(response)
       let res = JSON.parse(response)
       console.log(res)
