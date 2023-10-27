@@ -1,5 +1,5 @@
 var data = function (data) {
-    console.log(data)
+
     if (!data | !Array.isArray(data)) {
         return false
     } 
@@ -38,7 +38,7 @@ var data = function (data) {
                      this.tick ]
 
     msg = msgArray.join("\n")
-    console.log(msg)
+    console.info("msg ",msg)
     return msg
 }
 
