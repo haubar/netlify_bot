@@ -70,6 +70,7 @@ function getick(price) {
     console.info('price', price)
     let disc = getfee(price)
     console.info('disc', disc)
+
     let level = getpart(price)
     console.info('level', level)
     let part = Math.ceil(disc/(level*1000))
