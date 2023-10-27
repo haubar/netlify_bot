@@ -2,7 +2,7 @@ var data = function (data) {
 
     if (!data | !Array.isArray(data)) {
         console.log("format error....")
-        return false
+        // return false
     } 
     console.log("-----")
     this.name = data.c + data.n
