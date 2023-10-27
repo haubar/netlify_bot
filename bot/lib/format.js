@@ -1,9 +1,9 @@
 var data = function (data) {
-  
+    console.log(date)
     if (!data | !Array.isArray(data)) {
         return false
     } 
-
+    console.log("-----")
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
     this.hight = '最高價:' + data.h | ""
