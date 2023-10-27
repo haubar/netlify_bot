@@ -3,10 +3,10 @@ var data = function (data) {
     console.log("-----")
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
-    this.hight = '最高價:' + data.h | ""
-    this.lock = '漲停價:' + data.u | ""
-    this.low = '最低價:' + data.l | ""
-    this.down = '跌停價:' + data.w | ""
+    this.hight = '最高價:' + data.h 
+    this.lock = '漲停價:' + data.u
+    this.low = '最低價:' + data.l
+    this.down = '跌停價:' + data.w
     this.now_qty = '當盤成交量:' + data.tv | ""
     this.all_qty = '累積成交量:' + data.v | ""
     this.yd = '昨收價:' + getprice(data.y) | ""
