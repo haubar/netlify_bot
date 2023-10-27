@@ -84,7 +84,7 @@ const findstock = async (id) => {
 
 
 function getinfo(url) {
-    return rp.get(url).then(function(response) {
+    rp.get(url).then(function(response) {
       let res = JSON.parse(response)
       let info = res.msgArray[0] | ""
       if(!!info){
