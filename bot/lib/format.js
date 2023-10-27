@@ -55,22 +55,21 @@ function getprice(price) {
 
 // 手續費
 function getfee(price) {
-    let fee = getprice(price) * 1000 * 0.2697/100
+    let fee = price * 1000 * 0.2697/100
     return fee.toFixed(2)
 }
 
 // 檔位判斷
 function getpart(price) {
-    return price = getprice(price)
     return price<10?0.01:(price<50?0.05:(price<100?0.1:(price<500?0.5:(price<1000?1:5))))
 }
 
 //輸出標價資訊
 function getick(price) {
     price = getprice(price)
-  
-    // let disc = getfee(price)
-    // console.info('disc', price)
+    console.info('price', price)
+    let disc = getfee(price)
+    console.info('disc', disc)
     let level = getpart(price)
     console.info('level', level)
     let part = Math.ceil(disc/(level*1000))
