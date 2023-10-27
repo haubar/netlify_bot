@@ -8,16 +8,16 @@ var data = function (data) {
 
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
-    this.hight = '最高價:' + data.h 
-    this.lock = '漲停價:' + data.u
-    this.low = '最低價:' + data.l
-    this.down = '跌停價:' + data.w
+    this.hight = '最高價:' + (data.h).toFixed(2) 
+    this.lock = '漲停價:' + (data.u).toFixed(2)
+    this.low = '最低價:' + (data.l).toFixed(2)
+    this.down = '跌停價:' + (data.w).toFixed(2)
     this.now_qty = '當盤成交量:' + data.tv 
     this.all_qty = '累積成交量:' + data.v
     this.yd = '昨收價:' + getprice(data.y)
     this.now_buy = '現買價:' + getprice(data.b)
     this.now_sell = '現賣價:'+ getprice(data.a)
-    this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y))
+    this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y)).toFixed(2)
     this.now_sell_amont = '現賣量:' + getprice(data.f) 
     this.now_buy_amont = '現買量:' + getprice(data.g)
     this.disc = ('最低手續費用計算:' + getfee(data.b)) || 0
@@ -55,7 +55,7 @@ function getprice(price) {
 
 // 手續費
 function getfee(price) {
-    let fee = price * 1000 * 0.2697/100
+    let fee = getprice(price) * 1000 * 0.2697/100
     return fee.toFixed(2)
 }
 
