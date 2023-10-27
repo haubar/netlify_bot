@@ -50,13 +50,14 @@ function getprice(price) {
 
 // 手續費
 function getfee(price) {
-    return (getprice(price) * 1000 * 0.2697/100).toFixed(2)
+    let fee = getprice(price) * 1000 * 0.2697/100
+    return fee.toFixed(2)
 }
 
 // 檔位判斷
 function getpart(price) {
     price = getprice(price)
-    return price<10?0.01:(price<50?0.05:(price<100?0.1:(price<500?0.5:(price<1000?1:5)))); 
+    return price<10?0.01:(price<50?0.05:(price<100?0.1:(price<500?0.5:(price<1000?1:5))))
 }
 
 //輸出標價資訊
@@ -65,8 +66,8 @@ function getick(price) {
     let disc = getfee(price)
     let level = getpart(price)
     let part = Math.ceil(disc/(level*1000))
-    increase_price = (price + (part*level)).toFixed(2)
-    let msg = '最少要跳'+part+'檔,'+increase_price+'賣出'
+    let inc_price = price + (part*level)
+    let msg = '最少要跳'+part+'檔,'+increase_price.toFixed(2)+'賣出'
     return msg
 }
 
