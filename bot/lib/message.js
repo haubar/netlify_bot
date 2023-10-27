@@ -22,9 +22,11 @@ const botEvent = async (event) => {
   switch (type) {
     case 'text':
       let text = await getKeyword(event.message.text)
-      msg = await stock.findstock(text)
-      text = msg.join("\n") 
-      
+      text = await stock.findstock(text)
+      if(Array.isArray(text)) {
+          text = text.join("\n") 
+      }
+
       res = {
           type: 'text',
           text: `${text}`,
