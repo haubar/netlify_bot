@@ -40,15 +40,15 @@ const findstock = async (id) => {
           ]
         }
 
-        return getinfo = async() => {
-          for (let url of urls) {
-            let res = await getinfo(url)
-            // 有資料就回傳中斷
-            if(!!res) {
-              return res
-            }
+     
+        for (let url of urls) {
+          let res = await getinfo(url)
+          // 有資料就回傳中斷
+          if(!!res) {
+            return res
           }
-       }
+        }
+       
 
         // console.log(result)
         // for (let url of urls) {
