@@ -1,6 +1,5 @@
 var data = function (data) {
 
-    console.log("-----")
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
     this.hight = '最高價:' + data.h 
@@ -15,8 +14,8 @@ var data = function (data) {
     this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y))
     this.now_sell_amont = '現賣量:' + getprice(data.f) 
     this.now_buy_amont = '現買量:' + getprice(data.g)
-    this.disc = '最低手續費用計算:' + getfee(data.b)
-    this.tick = getick(data.b)
+    this.disc = ('最低手續費用計算:' + getfee(data.b)) || 0
+    // this.tick = getick(data.b)
 
    
     let msgArray = [ this.name, 
