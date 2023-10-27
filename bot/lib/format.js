@@ -47,6 +47,7 @@ var data = function (data) {
 
 // 取價
 function getprice(price) {
+    typeof price
     if(typeof price === 'string'){
         if(price.includes("_")){
             return parseFloat(price.split("_", 1))
