@@ -1,4 +1,4 @@
-let data = function (data) {
+var data = function (data) {
   
     if (!data | !Array.isArray(data)) {
         return false

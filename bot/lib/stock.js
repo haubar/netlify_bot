@@ -60,7 +60,7 @@ async function getinfo(url) {
       let res = JSON.parse(response)
       let info = res.msgArray[0]
       if(!!info){
-          console.log(info)
+          // console.log(info)
           return new format(info)
       }
 
