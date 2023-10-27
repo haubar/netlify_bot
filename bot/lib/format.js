@@ -1,5 +1,11 @@
 var data = function (data) {
 
+
+    if (!data | !Array.isArray(data)) {
+        console.log(typeof data)
+        return false
+    } 
+
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
     this.hight = '最高價:' + data.h 
@@ -66,7 +72,7 @@ function getick(price) {
     let level = getpart(price)
     let part = Math.ceil(disc/(level*1000))
     let inc_price = price + (part*level)
-    let msg = '最少要跳'+part+'檔,'+increase_price.toFixed(2)+'賣出'
+    let msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
     return msg
 }
 
