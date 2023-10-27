@@ -10,13 +10,13 @@ var data = function (data) {
     this.now_qty = '當盤成交量:' + data.tv | ""
     this.all_qty = '累積成交量:' + data.v | ""
     this.yd = '昨收價:' + getprice(data.y) | ""
-    this.now_buy = '現買價:' + getprice(data.b) | ""
-    this.now_sell = '現賣價:'+ getprice(data.a) | ""
-    this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y)) | ""
-    this.now_sell_amont = '現賣量:' + getprice(data.f) | ""
-    this.now_buy_amont = '現買量:' + getprice(data.g) | ""
-    this.disc = '最低手續費用計算:' + getfee(data.b) | ""
-    this.tick = getick(data.b) | ""
+    // this.now_buy = '現買價:' + getprice(data.b) | ""
+    // this.now_sell = '現賣價:'+ getprice(data.a) | ""
+    // this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y)) | ""
+    // this.now_sell_amont = '現賣量:' + getprice(data.f) | ""
+    // this.now_buy_amont = '現買量:' + getprice(data.g) | ""
+    // this.disc = '最低手續費用計算:' + getfee(data.b) | ""
+    // this.tick = getick(data.b) | ""
    
    
     let msgArray = [ this.name, 
