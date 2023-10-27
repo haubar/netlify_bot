@@ -46,7 +46,7 @@ const findstock = async (id) => {
           console.info("res", res)
           // 有資料就回傳中斷
           if(!!res) {
-            return res
+            return res.data.join("\n")
           }
         }
 

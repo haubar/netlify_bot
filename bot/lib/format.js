@@ -1,6 +1,5 @@
 var data = function (data) {
 
-
     if (!data || !(typeof data === "object")) {
         console.log(typeof data)
         return false
@@ -39,10 +38,8 @@ var data = function (data) {
                      this.all_qty, 
                      this.disc, 
                      this.tick ]
-
-    msg = msgArray.join("\n")
-    console.info("msg ",msg)
-    return msg
+                     
+    return msgArray
 }
 
 // 取價
