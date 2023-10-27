@@ -68,12 +68,17 @@ function getpart(price) {
 //輸出標價資訊
 function getick(price) {
     price = getprice(price)
+    console.info('', price)
     let disc = getfee(price)
+    console.info('', price)
     let level = getpart(price)
+    console.info('', price)
     let part = Math.ceil(disc/(level*1000))
+    console.info('', price)
     let inc_price = price + (part*level)
-    let msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
-    return msg
+    console.info('', price)
+    // let msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
+    return msg = ''
 }
 
 module.exports = data
