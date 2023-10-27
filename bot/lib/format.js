@@ -61,7 +61,7 @@ function getfee(price) {
 
 // 檔位判斷
 function getpart(price) {
-    price = getprice(price)
+    return price = getprice(price)
     return price<10?0.01:(price<50?0.05:(price<100?0.1:(price<500?0.5:(price<1000?1:5))))
 }
 
