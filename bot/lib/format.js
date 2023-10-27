@@ -1,7 +1,7 @@
 var data = function (data) {
 
 
-    if (!data | !(typeof data == "object")) {
+    if (!data | !(typeof data === "object")) {
         console.log(typeof data)
         return false
     } 
