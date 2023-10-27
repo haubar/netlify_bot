@@ -1,10 +1,10 @@
 var data = function (data) {
 
 
-    if (!data | !(typeof data === "object")) {
+    // if (!data || !(typeof data === "object")) {
         console.log(typeof data)
-        return false
-    } 
+        // return false
+    // } 
 
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
