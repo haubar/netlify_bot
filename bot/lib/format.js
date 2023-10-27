@@ -68,15 +68,15 @@ function getpart(price) {
 //輸出標價資訊
 function getick(price) {
     price = getprice(price)
-    console.info('', price)
-    let disc = getfee(price)
-    console.info('', price)
+  
+    // let disc = getfee(price)
+    // console.info('disc', price)
     let level = getpart(price)
-    console.info('', price)
+    console.info('level', level)
     let part = Math.ceil(disc/(level*1000))
-    console.info('', price)
+    console.info('part', part)
     let inc_price = price + (part*level)
-    console.info('', price)
+    console.info('inc', inc_price)
     // let msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
     return msg = ''
 }
