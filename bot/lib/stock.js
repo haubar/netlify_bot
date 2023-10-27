@@ -42,17 +42,18 @@ const findstock = async (id) => {
 
         const result = urls.map( (uri) => getinfo(uri) )
 
-        for (let url of urls) {
-          console.log('before', url);
+        console.log(result)
+        // for (let url of urls) {
+        //   console.log('before', url);
       
-          await rp.get(url)
-            .then(async () => {
+        //   await rp.get(url)
+        //     .then(async () => {
 
-              console.log('success', elem);
-            })
+        //       console.log('success', elem);
+        //     })
       
-          console.log('after', elem);
-        })
+        //   console.log('after', elem);
+        // })
 
         // usernames.map(async (username) => {return await simulateFetchData(username);})
         // Object.values(urls).map(url => {
@@ -79,7 +80,7 @@ function getinfo(url) {
 
 
     return await rp.get(url).then(function(response) {
-      // console.log(response)
+      console.log(response)
       let res = JSON.parse(response)
       console.log(res)
       // let info = res.msgArray[0] | ""
