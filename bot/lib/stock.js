@@ -40,15 +40,29 @@ const findstock = async (id) => {
           ]
         }
 
+        const result = urls.map( (uri) => getinfo(uri) )
+
+        for (let url of urls) {
+          console.log('before', url);
+      
+          await rp.get(url)
+            .then(async () => {
+
+              console.log('success', elem);
+            })
+      
+          console.log('after', elem);
+        })
+
         // usernames.map(async (username) => {return await simulateFetchData(username);})
-        Object.values(urls).map(url => {
+        // Object.values(urls).map(url => {
            
-            let result = getinfo(url)
-            console.log(result)
+            // let result = getinfo(url)
+            // console.log(result)
             // if (result) {
               
             // }
-        })
+        // })
 
     } catch (error) {
         return "出錯囉" + id
@@ -56,11 +70,18 @@ const findstock = async (id) => {
 }
 
 
-async function getinfo(url) {
-    await rp( {'uri': url} ).then(function(response) {
-      console.log(response)
-      // let res = JSON.parse(response)
-      // console.log(res)
+function getinfo(url) {
+    // await rp.get(url)
+    //   .then(async () => {
+
+    //     console.log('success', elem);
+    //   })
+
+
+    return await rp.get(url).then(function(response) {
+      // console.log(response)
+      let res = JSON.parse(response)
+      console.log(res)
       // let info = res.msgArray[0] | ""
       // if(!!info){
           // console.log(info)
@@ -68,6 +89,7 @@ async function getinfo(url) {
       // }
       // return info
     })
+  
 }
 
 async function getinfopromiss(url) {

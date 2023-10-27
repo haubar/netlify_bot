@@ -22,11 +22,10 @@ const botEvent = async (event) => {
   switch (type) {
     case 'text':
       let text = await getKeyword(event.message.text)
-      await stock.findstock(text)
-      // text = (text)
+      text = await stock.findstock(text)
+      
       res = {
           type: 'text',
-          // text: `我收到的訊息是.... ${text}`,
           text: `${text}`,
       }
       break
@@ -96,7 +95,7 @@ async function getKeyword(keyword) {
       let text = keyword.trim()
       //非數字
       if(!!isNaN(text)) {
-          return await stock.getstock(text) || 0
+          return await stock.getstock(text) || '聽嘸哩共蝦咪...'
       }
       return text
   } catch (error) {
