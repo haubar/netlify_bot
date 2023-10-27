@@ -1,5 +1,5 @@
 var data = function (data) {
-    console.log(date)
+    console.log(data)
     if (!data | !Array.isArray(data)) {
         return false
     } 
