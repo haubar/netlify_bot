@@ -48,34 +48,6 @@ const findstock = async (id) => {
             return res
           }
         }
-       
-
-        // console.log(result)
-        // for (let url of urls) {
-        //   console.log('before', url);
-        //   let res = await getinfo(url)
-        //   if(!!res) {
-        //     return res
-        //   }
-        // }
-        //   await rp.get(url)
-        //     .then(async () => {
-
-        //       console.log('success', elem);
-        //     })
-      
-        //   console.log('after', elem);
-        // })
-
-        // usernames.map(async (username) => {return await simulateFetchData(username);})
-        // Object.values(urls).map(url => {
-           
-            // let result = getinfo(url)
-            // console.log(result)
-            // if (result) {
-              
-            // }
-        // })
 
     } catch (error) {
         return "出錯囉" + id

@@ -37,9 +37,9 @@ let data = function (data) {
                      this.disc, 
                      this.tick ]
 
-    this.msg = msgArray.join("\n")
-
-    return this.msg
+    msg = msgArray.join("\n")
+    console.log(msg)
+    return msg
 }
 
 // 取價
