@@ -15,7 +15,7 @@ var data = function (data) {
     this.now_sell_amont = '現賣量:' + getprice(data.f) 
     this.now_buy_amont = '現買量:' + getprice(data.g)
     this.disc = ('最低手續費用計算:' + getfee(data.b)) || 0
-    // this.tick = getick(data.b)
+    this.tick = (getick(data.b)) || 0
 
    
     let msgArray = [ this.name, 
