@@ -1,10 +1,5 @@
 var data = function (data) {
 
-    console.log(data.c)
-    if (!data | !Array.isArray(data)) {
-        console.log("format error....")
-        // return false
-    } 
     console.log("-----")
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
@@ -22,7 +17,8 @@ var data = function (data) {
     this.now_buy_amont = '現買量:' + getprice(data.g) | ""
     this.disc = '最低手續費用計算:' + getfee(data.b) | ""
     this.tick = getick(data.b) | ""
-    
+    console.log(this.tick)
+   
     let msgArray = [ this.name, 
                      this.fullname, 
                      this.now_level, 
