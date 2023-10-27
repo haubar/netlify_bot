@@ -1,7 +1,6 @@
 var data = function (data) {
-
+    console.info("defi", data)
     if (!data || !(typeof data === "object")) {
-        console.log(typeof data)
         return false
     } 
 
@@ -23,7 +22,8 @@ var data = function (data) {
     this.tick = (getick(data.b)) || 0
 
    
-    let msgArray = [ this.name, 
+    return msgArray = [ 
+                     this.name, 
                      this.fullname, 
                      this.now_level, 
                      this.now_buy, 
@@ -37,9 +37,9 @@ var data = function (data) {
                      this.now_qty, 
                      this.all_qty, 
                      this.disc, 
-                     this.tick ]
+                     this.tick 
+                    ]
                      
-    return msgArray
 }
 
 // 取價
