@@ -9,7 +9,7 @@ var data = function (data) {
     this.down = '跌停價:' + data.w | ""
     this.now_qty = '當盤成交量:' + data.tv | ""
     this.all_qty = '累積成交量:' + data.v | ""
-    // this.yd = '昨收價:' + getprice(data.y) 
+    this.yd = '昨收價:' + getprice(data.y) | ""
     // this.now_buy = '現買價:' + getprice(data.b) | ""
     // this.now_sell = '現賣價:'+ getprice(data.a) | ""
     // this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y)) | ""
@@ -19,25 +19,25 @@ var data = function (data) {
     // this.tick = getick(data.b) | ""
     console.log(this.name)
    
-    // let msgArray = [ this.name, 
-    //                  this.fullname, 
-    //                  this.now_level, 
-    //                  this.now_buy, 
-    //                  this.now_buy_amont, 
-    //                  this.now_sell, 
-    //                  this.now_sell_amont, 
-    //                  this.hight,
-    //                  this.lock, 
-    //                  this.low, 
-    //                  this.down,
-    //                  this.now_qty, 
-    //                  this.all_qty, 
-    //                  this.disc, 
-    //                  this.tick ]
+    let msgArray = [ this.name, 
+                     this.fullname, 
+                     this.now_level, 
+                     this.now_buy, 
+                     this.now_buy_amont, 
+                     this.now_sell, 
+                     this.now_sell_amont, 
+                     this.hight,
+                     this.lock, 
+                     this.low, 
+                     this.down,
+                     this.now_qty, 
+                     this.all_qty, 
+                     this.disc, 
+                     this.tick ]
 
-    // msg = msgArray.join("\n")
-    // console.info("msg ",msg)
-    // return msg
+    msg = msgArray.join("\n")
+    console.info("msg ",msg)
+    return msg
 }
 
 // 取價
