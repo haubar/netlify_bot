@@ -1,5 +1,5 @@
 var data = function (data) {
-    console.info("defi", data)
+  
     if (!data || !(typeof data === "object")) {
         return false
     } 
@@ -66,16 +66,10 @@ function getpart(price) {
 //輸出標價資訊
 function getick(price) {
     price = getprice(price)
-    console.info('price', price)
     let disc = getfee(price)
-    console.info('disc', disc)
-
     let level = getpart(price)
-    console.info('level', level)
     let part = Math.ceil(disc/(level*1000))
-    console.info('part', part)
     let inc_price = price + (part*level)
-    console.info('inc', inc_price)
     return msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
     
 }

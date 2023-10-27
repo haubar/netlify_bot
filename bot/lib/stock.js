@@ -43,12 +43,12 @@ const findstock = async (id) => {
      
         for (let url of urls) {
           let res = await getinfo(url)
-          console.info("res", res)
           // 有資料就回傳中斷
           if(!!res) {
-            return res.join("\n")
+            return res
           }
         }
+        return id
 
     } catch (error) {
         return "出錯囉" + id
@@ -61,7 +61,6 @@ async function getinfo(url) {
       let res = JSON.parse(response)
       let info = res.msgArray[0]
       if(!!info){
-          // console.log(info)
           return new format(info)
       }
 
