@@ -1,5 +1,6 @@
 var data = function (data) {
 
+    console.log(data.c)
     if (!data | !Array.isArray(data)) {
         console.log("format error....")
         // return false
