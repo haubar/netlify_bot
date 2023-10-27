@@ -40,12 +40,24 @@ const findstock = async (id) => {
           ]
         }
 
-        const result = urls.map( (uri) => getinfo(uri) )
+        return getinfo = async() => {
+          for (let url of urls) {
+            let res = await getinfo(url)
+            // 有資料就回傳中斷
+            if(!!res) {
+              return res
+            }
+          }
+       }
 
-        console.log(result)
+        // console.log(result)
         // for (let url of urls) {
         //   console.log('before', url);
-      
+        //   let res = await getinfo(url)
+        //   if(!!res) {
+        //     return res
+        //   }
+        // }
         //   await rp.get(url)
         //     .then(async () => {
 
@@ -72,12 +84,7 @@ const findstock = async (id) => {
 
 
 function getinfo(url) {
-    // await rp.get(url)
-    //   .then(async () => {
-
-    //     console.log('success', elem);
-    //   })
-
+  
 
     return rp.get(url).then(function(response) {
       console.log(response)
