@@ -15,8 +15,8 @@ var data = function (data) {
     this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y))
     this.now_sell_amont = '現賣量:' + getprice(data.f) 
     this.now_buy_amont = '現買量:' + getprice(data.g)
-    // this.disc = '最低手續費用計算:' + getfee(data.b) | ""
-    // this.tick = getick(data.b) | ""
+    this.disc = '最低手續費用計算:' + getfee(data.b)
+    this.tick = getick(data.b)
 
    
     let msgArray = [ this.name, 
@@ -55,13 +55,13 @@ function getfee(price) {
 
 // 檔位判斷
 function getpart(price) {
-    price = getprice(price)
+    let price = getprice(price)
     return price<10?0.01:(price<50?0.05:(price<100?0.1:(price<500?0.5:(price<1000?1:5)))); 
 }
 
 //輸出標價資訊
 function getick(price) {
-    price = getprice(price)
+    let price = getprice(price)
     let disc = getfee(price)
     let level = getpart(price)
     let part = Math.ceil(disc/(level*1000))
