@@ -90,7 +90,7 @@ async function getinfo(url) {
       let info = res.msgArray[0] | ""
       console.log(info)
       if(!!info){
-          console.log(info)
+          
           return new format(info)
       }
 
