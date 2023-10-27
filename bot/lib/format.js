@@ -38,6 +38,8 @@ let data = function (data) {
                      this.tick ]
 
     this.msg = msgArray.join("\n")
+
+    return this.msg
 }
 
 // 取價
