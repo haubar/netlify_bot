@@ -30,25 +30,18 @@ const getstock = async (string) => {
 
 const findstock = async (id) => {
     try {
-        let urls
+        let url
         if(id == '00' || id == 0) {
-          urls = ['https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t'+ id +'.tw&json=1&delay=0']
+          url = 'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t'+ id +'.tw&json=1&delay=0'
         } else {
-          urls = [
-            'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_'+ id +'.tw&json=1&delay=0',
-            'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=otc_'+ id +'.tw&json=1&delay=0'
-          ]
+          url = 'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_'+ id +'.tw|otc_'+ id +'.tw&json=1&delay=0'
         }
 
-     
-        for (let url of urls) {
-          let res = await getinfo(url)
-          // 有資料就回傳中斷
-          if(!!res) {
+        let res = await getinfo(url)
+        if(!!res) {
             return res
-          }
-        }
-        return id
+        } 
+        return '沒有 ' + id + ' 的資料'
 
     } catch (error) {
         return "出錯囉" + id
