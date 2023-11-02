@@ -4,6 +4,30 @@ var data = function (data) {
         return false
     } 
 
+    if (typeof data.u == 'undefined') {
+        
+           this.name = data.c + info.n
+           this.fullname = data.c + '名稱:' + data.n
+           this.hight = '最高價:'+data.h
+           this.low = '最低價:'+data.l
+           this.all_qty = '累積成交量:'+data.v
+           this.yd = '昨收價:' + data.y
+           this.now_buy = '現價:'+ data.z
+           this.now_level = '漲跌:'+ (getprice(data.z) - getprice(data.y)).toFixed(2)
+          
+           return msgArray = [ 
+                    this.name, 
+                    this.fullname, 
+                    this.now_buy, 
+                    this.hight,
+                    this.low, 
+                    this.all_qty, 
+                    this.yd, 
+                    this.now_level
+                ]
+
+    }
+
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
     this.hight = '最高價:' + data.h
@@ -34,6 +58,7 @@ var data = function (data) {
                      this.lock, 
                      this.low, 
                      this.down,
+                     this.yd,
                      this.now_qty, 
                      this.all_qty, 
                      this.disc, 
