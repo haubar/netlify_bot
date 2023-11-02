@@ -6,7 +6,7 @@ var data = function (data) {
 
     if (typeof data.u == 'undefined') {
         
-           this.name = data.c + info.n
+           this.name = data.c + data.n
            this.fullname = data.c + '名稱:' + data.n
            this.hight = '最高價:'+data.h
            this.low = '最低價:'+data.l
@@ -14,7 +14,7 @@ var data = function (data) {
            this.yd = '昨收價:' + data.y
            this.now_buy = '現價:'+ data.z
            this.now_level = '漲跌:'+ (getprice(data.z) - getprice(data.y)).toFixed(2)
-          
+
            return msgArray = [ 
                     this.name, 
                     this.fullname, 
