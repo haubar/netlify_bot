@@ -98,7 +98,8 @@ async function getKeyword(keyword) {
       let text = keyword.trim()
       //非數字
       if(!!isNaN(text)) {
-          return await stock.getstock(text) || 0
+          // return await stock.getstock(text) || 0
+          return await stock.getstockcode(text) || 0
       }
       return text
   } catch (error) {

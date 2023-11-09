@@ -28,6 +28,21 @@ const getstock = async (string) => {
   }
 }
 
+// 證交所名稱股號對應
+const getstockcode = async (string) => {
+  try {
+    let url = 'https://mis.twse.com.tw/stock/api/getStockNames.jsp?n='+ string
+    let res = await getstockid(url)
+    if(!!res) {
+        return res
+    } 
+    return 0
+   
+  } catch (error) {
+      throw error
+  }
+}
+
 const findstock = async (id) => {
     try {
         let url
@@ -56,11 +71,20 @@ async function getinfo(url) {
       if(!!info){
           return new format(info)
       }
-
     })
-  
+}
+
+
+async function getstockid(url) {
+  return rp.get(url).then(function(response) {
+    let res = JSON.parse(response)
+    let info = res.datas[0]
+    if(!!info){
+        return info.c
+    }
+  })
 }
 
 
 
-module.exports = { getstock, findstock }
+module.exports = {getstockcode, getstock, findstock }
