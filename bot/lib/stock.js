@@ -78,7 +78,6 @@ async function getinfo(url) {
 async function getstockid(url) {
   return rp.get(url).then(function(response) {
     let res = JSON.parse(response)
-    console.log(res)
     let info = res.datas[0]
     if(!!info){
         return info.c
