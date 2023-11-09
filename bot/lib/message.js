@@ -25,7 +25,7 @@ const botEvent = async (event) => {
       let stockid = await getKeyword(text)
       text = await stock.findstock(stockid)
       if(Array.isArray(text)) {
-          text = message.join("\n") 
+          text = text.join("\n") 
       }
 
       res = {
