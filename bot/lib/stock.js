@@ -31,7 +31,7 @@ const getstock = async (string) => {
 // 證交所名稱股號對應
 const getstockcode = async (string) => {
   try {
-    let url = 'https://mis.twse.com.tw/stock/api/getStockNames.jsp?n='+ string
+    let url = 'https://mis.twse.com.tw/stock/api/getStockNames.jsp?n='+ encodeURIComponent(string)
     let res = await getstockid(url)
     if(!!res) {
         return res
@@ -78,6 +78,7 @@ async function getinfo(url) {
 async function getstockid(url) {
   return rp.get(url).then(function(response) {
     let res = JSON.parse(response)
+    console.log(res)
     let info = res.datas[0]
     if(!!info){
         return info.c
