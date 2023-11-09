@@ -23,8 +23,8 @@ const botEvent = async (event) => {
     case 'text':
       let text = event.message.text
       let stockid = await getKeyword(text)
-      let message = await stock.findstock(stockid)
-      if(Array.isArray(message)) {
+      text = await stock.findstock(stockid)
+      if(Array.isArray(text)) {
           text = message.join("\n") 
       }
 
