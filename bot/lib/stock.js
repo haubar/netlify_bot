@@ -36,7 +36,7 @@ const getstockcode = async (string) => {
     if(!!res) {
         return res
     } 
-    return 0
+    return string
    
   } catch (error) {
       throw error
