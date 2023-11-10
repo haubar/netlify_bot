@@ -97,8 +97,13 @@ async function getKeyword(keyword) {
   try {
       //解析關鍵字
       let text = keyword.trim()
+      // 零值加權驗證
+      let zero_reg = new RegExp("^[0]+$")
+      if (zero_reg.test(text) ) {
+          return 0
+      }
       //非英數字
-      let reg = new RegExp("^\w+$")
+      let reg = new RegExp("^[a-zA-Z0-9]+$")
       if (!reg.test(text) ) {
           return await stock.getstockcode(text) || 0
       }
