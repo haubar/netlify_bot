@@ -52,8 +52,8 @@ const findstock = async (id) => {
         }
         
         let url
-        if(id == 0) {
-          url = 'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t'+ id +'.tw&json=1&delay=0'
+        if(parseInt(id) == 0) {
+          url = 'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t00.tw&json=1&delay=0'
         } else {
           url = 'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_'+ id +'.tw|otc_'+ id +'.tw&json=1&delay=0'
         }
