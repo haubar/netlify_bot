@@ -45,10 +45,15 @@ const getstockcode = async (string) => {
 
 const findstock = async (id) => {
     try {
-        let reg = new RegExp("^\w+$")
+        //非英數字
+        // if(isNaN(id)) {
+        //     return '沒有 ' + id + ' 的資料'
+        // }
+        let reg = new RegExp("^[a-zA-Z0-9]+$")
         if (!reg.test(id) ) {
             return '沒有 ' + id + ' 的資料'
         }
+        
         let url
         if(id == '00' || id == 0) {
           url = 'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t'+ id +'.tw&json=1&delay=0'
