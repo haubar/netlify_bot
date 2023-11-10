@@ -97,9 +97,9 @@ async function getKeyword(keyword) {
   try {
       //解析關鍵字
       let text = keyword.trim()
-      //非數字
-      if(!!isNaN(text)) {
-          // return await stock.getstock(text) || 0
+      //非英數字
+      let reg = new RegExp("^\w+$")
+      if (!reg.test(text) ) {
           return await stock.getstockcode(text) || 0
       }
       return text
