@@ -75,7 +75,9 @@ function getprice(price) {
             return parseFloat(current)
         }
     }
-    return parseFloat(price)
+
+    //轉為整數
+    return price % 1 === 0 ? parseFloat(price) : parseFloat(price);
 }
 
 // 手續費
