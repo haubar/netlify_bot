@@ -71,8 +71,8 @@ var data = function (data) {
 function getprice(price) {
     if(typeof price === 'string'){
         if(price.includes("_")){
-            let current = price.split("_", 1)
-            return parseFloat(current) % 1 === 0 ? parseFloat(current) : parseFloat(current);
+            let current = price.split("_", 1) ? price.split("_", 1) : 0
+            return parseFloat(current)
         }
     }
     return parseFloat(price)
