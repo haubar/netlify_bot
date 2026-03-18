@@ -79,6 +79,8 @@ const findstock = async (id) => {
 async function getinfo(url) {
     return rp.get(url).then(function(response) {
       let res = JSON.parse(response)
+    console.log('原始回傳資料:', response)
+    console.log('轉換後資料:', res)
       let info = res.msgArray[0]
       if(!!info){
           return new format(info)
