@@ -22,8 +22,14 @@ const botEvent = async (event) => {
   switch (type) {
     case 'text':
       let text = event.message.text
+      console.log('📨 收到搜尋: ' + text)
+      
       let stockid = await getKeyword(text)
+      console.log('🔍 轉換後的股票ID: ' + stockid)
+      
       text = await stock.findstock(stockid)
+      console.log('📊 搜尋結果:', text)
+      
       if(Array.isArray(text)) {
           text = text.join("\n") 
       }
@@ -97,6 +103,8 @@ async function getKeyword(keyword) {
   try {
       //解析關鍵字
       let text = keyword.trim()
+      console.log('🏷️ 原始關鍵字:', text)
+      
       // 零值加權驗證
       let zero_reg = new RegExp("^[0]+$")
       if (zero_reg.test(text) ) {
@@ -105,14 +113,16 @@ async function getKeyword(keyword) {
       //非英數字
       let reg = new RegExp("^[a-zA-Z0-9]+$")
       if (!reg.test(text) ) {
-          return await stock.getstockcode(text) || 0
+          const code = await stock.getstockcode(text)
+          console.log('💬 中文轉股票代碼:', code)
+          return code || 0
       }
       return text
   } catch (error) {
+      console.error('❌ 錯誤:', error.message)
       return error.toString()
   }
 }
-
 
 
 
