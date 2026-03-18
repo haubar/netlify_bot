@@ -31,10 +31,13 @@ const getstock = async (string) => {
 // 證交所名稱股號對應
 const getstockcode = async (string) => {
   try {
-    // let url = 'https://mis.twse.com.tw/stock/api/getStockNames.jsp?n='+ encodeURIComponent(string)
+    let twse_url = 'https://mis.twse.com.tw/stock/api/getStockNames.jsp?n='+ encodeURIComponent(string)
     let url = 'https://script.google.com/macros/s/AKfycbxkhX8DaH60maKvj8QFpMgcN0pknXtjZvjeDb35irCEekWYXUJrMrEKEs_W0vc0bpNG/exec?keyword='+ encodeURIComponent(string)
     // let res = await getstockid(url)
     let res = await getstockidfromsheet(url)
+    if(!res) {
+        res = await getstockidfromtwse(twse_url)
+    }
     if(!!res) {
         return res
     } 
@@ -106,6 +109,18 @@ async function getstockidfromsheet(url) {
     }
   })
 }
+
+
+async function getstockidfromtwse(url) {
+  return rp.get(url).then(function(response) {
+    let res = JSON.parse(response)
+    let info = res.datas[0]
+    if(!!info){
+        return info.c
+    }
+  })
+}
+
 
 
 
