@@ -113,6 +113,7 @@ async function getKeyword(keyword) {
       //非英數字
       let reg = new RegExp("^[a-zA-Z0-9]+$")
       if (!reg.test(text) ) {
+          console.log('🏷️ 搜尋關鍵字:', text)
           const code = await stock.getstockcode(text)
           console.log('💬 中文轉股票代碼:', code)
           return code || 0

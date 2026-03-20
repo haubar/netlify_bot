@@ -111,6 +111,7 @@ async function getstockid(url) {
 async function getstockidfromsheet(url) {
   return rp.get(url).then(function(response) {
     let res = JSON.parse(response)
+    console.log('gas原始回傳資料:', res)
     let info = res.data[0]
     if(!!info){
         return info[0]
@@ -122,6 +123,7 @@ async function getstockidfromsheet(url) {
 async function getstockidfromtwse(url) {
   return rp.get(url).then(function(response) {
     let res = JSON.parse(response)
+    console.log('twse原始回傳資料:', res)
     let info = res.datas[0]
     if(!!info){
         return info.c
