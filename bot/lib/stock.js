@@ -32,8 +32,8 @@ const getstock = async (string) => {
 const getstockcode = async (string) => {
   try {
     let twse_url = 'https://mis.twse.com.tw/stock/api/getStockNames.jsp?n='+ encodeURIComponent(string)
-    // let url = 'https://script.google.com/macros/s/AKfycbxkhX8DaH60maKvj8QFpMgcN0pknXtjZvjeDb35irCEekWYXUJrMrEKEs_W0vc0bpNG/exec?keyword='+ encodeURIComponent(string)
-    let url = 'https://script.google.com/macros/s/AKfycbx88WUfujfLg4oR25_9pZpTflN1Ke5lHp1XrSXNm6UUqO5XVymRt9G4gbRsJFQM4DV2/exec?keyword='+ encodeURIComponent(string)
+    let url = 'https://script.google.com/macros/s/AKfycbxkhX8DaH60maKvj8QFpMgcN0pknXtjZvjeDb35irCEekWYXUJrMrEKEs_W0vc0bpNG/exec?keyword='+ encodeURIComponent(string)
+    // let url = 'https://script.google.com/macros/s/AKfycbx88WUfujfLg4oR25_9pZpTflN1Ke5lHp1XrSXNm6UUqO5XVymRt9G4gbRsJFQM4DV2/exec?keyword='+ encodeURIComponent(string)
     // let res = await getstockid(url)
     let res = await getstockidfromsheet(url)
     if(!res) {
