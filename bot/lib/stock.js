@@ -1,7 +1,7 @@
 const format = require('./format')
 const airtable = require('airtable')
 const axios = require('axios')
-const rp = require('request-promise').defaults({ jar: true, timeout: 30000 })
+const rp = require('request-promise').defaults({ jar: true, timeout: 90000 })
 
 const stockdb = new airtable({
     apiKey: process.env.airtableKey
