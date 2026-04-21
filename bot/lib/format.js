@@ -104,9 +104,9 @@ function getick(price) {
 }
 //判斷漲跌停的輸出樣式
 function getlevel(data) {
-  let now_price     = getprice(stock.z) || 0;  // 現在成交價
-  let upper_limit = getprice(stock.u) || 0; // 漲停價
-  let lower_limit = getprice(stock.w) || 0; // 跌停價
+  let now_price     = getprice(data.z) || 0;  // 現在成交價
+  let upper_limit = getprice(data.u) || 0; // 漲停價
+  let lower_limit = getprice(data.w) || 0; // 跌停價
 
     //漲跌停判斷
     if(now_price >= upper_limit) {
