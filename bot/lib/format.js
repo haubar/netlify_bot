@@ -39,7 +39,8 @@ var data = function (data) {
     this.yd = '昨收價:' + getprice(data.y)
     this.now_buy = '現買價:' + (getprice(data.b) || 0)
     this.now_sell = '現賣價:'+ (getprice(data.a) || 0)
-    this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y)).toFixed(2)
+    // this.now_level = '漲跌:' + (getprice(data.b) - getprice(data.y)).toFixed(2)
+    this.now_level = getlevel(data)
     this.now_sell_amont = '現賣量:' + (getprice(data.f) || 0 ) 
     this.now_buy_amont = '現買量:' + (getprice(data.g) || 0)
     this.disc = ('最低手續費用計算:' + getfee(data.b)) || 0
@@ -100,6 +101,24 @@ function getick(price) {
     let inc_price = price + (part*level)
     return msg = '最少要跳'+part+'檔,'+inc_price.toFixed(2)+'賣出'
     
+}
+//判斷漲跌停的輸出樣式
+function getlevel(data) {
+  let now_price     = getprice(stock.z) || 0;  // 現在成交價
+  let upper_limit = getprice(stock.u) || 0; // 漲停價
+  let lower_limit = getprice(stock.w) || 0; // 跌停價
+
+    //漲跌停判斷
+    if(now_price >= upper_limit) {
+         return '🔴 漲停'. emoji('1f4c8') 
+    }
+    if(now_price <= lower_limit) {
+        return '🟢 跌停' .emoji('1f4c9')
+    }
+
+    return '漲跌:' + (getprice(data.b) - getprice(data.y)).toFixed(2)
+
+    // let level = getprice(price) 
 }
 
 module.exports = data
