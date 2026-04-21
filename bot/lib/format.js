@@ -110,10 +110,10 @@ function getlevel(data) {
 
     //漲跌停判斷
     if(now_price >= upper_limit) {
-         return '🔴 漲停'. emoji('1f4c8') 
+         return '🔴 漲停 📈' 
     }
     if(now_price <= lower_limit) {
-        return '🟢 跌停' .emoji('1f4c9')
+        return '🟢 跌停 📉'
     }
 
     return '漲跌:' + (getprice(data.b) - getprice(data.y)).toFixed(2)
