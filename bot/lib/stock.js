@@ -84,11 +84,10 @@ async function getinfo(url) {
       // console.log('原始回傳資料:', response)
       console.log('轉換後資料:', res)
       let info = ""
-      if(res.msgArray[0]['@'] == undefined) {
+      if(!!res.msgArray[0]['@']) {
+        info = res.msgArray[0]
+      } else if(!!res.msgArray[1]['@']) {
         info = res.msgArray[1]
-      } else {
-        return false
-        // info = res.msgArray[0]
       }
 
       if(!!info){
