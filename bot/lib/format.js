@@ -120,10 +120,10 @@ function getlevel(data) {
 
     //漲跌停判斷
     if(now_price == upper_limit) {
-        return '🔴 漲停 📈' 
+        return '🔴 漲停 📈' + now_price 
     }
     if(now_price == lower_limit) {
-        return '🟢 跌停 📉'
+        return '🟢 跌停 📉' + now_price
     }
 
     return '漲跌:' + (getprice(data.b) - getprice(data.y)).toFixed(2)
