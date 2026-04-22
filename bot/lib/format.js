@@ -28,6 +28,10 @@ var data = function (data) {
 
     }
 
+    if (typeof data.n == 'undefined') {
+        return '沒有' ++ '的報價資料';
+    }
+
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
     this.hight = '最高價:' + data.h
@@ -111,17 +115,17 @@ function getlevel(data) {
   let lower_limit = getprice(data.w) || 0; // 跌停價
 
 
-//    console.log('現賣價格:'+now_sell)
-//    console.log('漲停價格:'+upper_limit)
-//    console.log('現買價格:'+now_buy)
-//    console.log('跌停價格:'+lower_limit)
-//    console.log('現在成交價:'+now_price)
+   console.log('現賣價格:'+now_sell)
+   console.log('漲停價格:'+upper_limit)
+   console.log('現買價格:'+now_buy)
+   console.log('跌停價格:'+lower_limit)
+   console.log('現在成交價:'+now_price)
 
     //漲跌停判斷
-    if(now_price == upper_limit) {
+    if(now_price === upper_limit) {
         return '🔴 漲停 📈' + now_price 
     }
-    if(now_price == lower_limit) {
+    if(now_price === lower_limit) {
         return '🟢 跌停 📉' + now_price
     }
 
