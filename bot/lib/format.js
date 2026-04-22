@@ -29,7 +29,7 @@ var data = function (data) {
     }
 
     if (typeof data.n == 'undefined') {
-        return '沒有' ++ '的報價資料';
+        return '';
     }
 
     this.name = data.c + data.n

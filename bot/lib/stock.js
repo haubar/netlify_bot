@@ -83,6 +83,9 @@ async function getinfo(url) {
       let res = JSON.parse(response)
       // console.log('原始回傳資料:', response)
       console.log('轉換後資料:', res)
+      if(!res || res.rtcode != '0000') {
+        return false;
+      }
       let info = ""
       if(res.msgArray[0]['@'] == undefined) {
         info = res.msgArray[1]
