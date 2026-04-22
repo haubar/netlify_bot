@@ -28,7 +28,7 @@ const botEvent = async (event) => {
       console.log('🔍 轉換後的股票ID: ' + stockid)
       
       text = await stock.findstock(stockid)
-      console.log('📊 搜尋結果:', text)
+      // console.log('📊 搜尋結果:', text)
       
       if(Array.isArray(text)) {
           text = text.join("\n") 

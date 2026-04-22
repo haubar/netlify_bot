@@ -104,22 +104,25 @@ function getick(price) {
 }
 //判斷漲跌停的輸出樣式
 function getlevel(data) {
+  let now_price = getprice(data.z) || 0; // 現買價
   let now_buy = getprice(data.b) || 0; // 現買價
   let now_sell = getprice(data.a) || 0; // 現賣價
   let upper_limit = getprice(data.u) || 0; // 漲停價
   let lower_limit = getprice(data.w) || 0; // 跌停價
 
+
+
+   console.log('現賣價格:'+now_sell)
+   console.log('漲停價格:'+upper_limit)
+   confirm.log('現買價格:'+now_buy)
+   console.log('跌停價格:'+lower_limit)
+   console.log('現價格:'+now_price)
+
     //漲跌停判斷
     if(now_sell >= upper_limit) {
-         console.log('漲停了')
-         console.log('現在價格:'+now_sell)
-         console.log('漲停價格:'+upper_limit)
          return '🔴 漲停 📈' 
     }
     if(now_buy <= lower_limit) {
-        console.log('跌停了')
-        console.log('現在價格:'+now_buy)
-        console.log('跌停價格:'+lower_limit)
         return '🟢 跌停 📉'
     }
 
