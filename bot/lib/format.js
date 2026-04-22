@@ -122,10 +122,10 @@ function getlevel(data) {
    console.log('現在成交價:'+now_price)
 
     //漲跌停判斷
-    if(now_price === upper_limit) {
+    if(now_price === upper_limit || now_buy == 0) {
         return '🔴 漲停 📈' + now_price 
     }
-    if(now_price === lower_limit) {
+    if(now_price === lower_limit || now_sell == 0) {
         return '🟢 跌停 📉' + now_price
     }
 
