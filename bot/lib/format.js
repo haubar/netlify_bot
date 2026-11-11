@@ -34,6 +34,7 @@ var data = function (data) {
 
     this.name = data.c + data.n
     this.fullname = data.c + '名稱:' + data.nf
+    this.time = '報價時間:' + data.t
     this.hight = '最高價:' + data.h
     this.lock = '漲停價:' + data.u
     this.low = '最低價:' + data.l
@@ -54,6 +55,7 @@ var data = function (data) {
     return msgArray = [ 
                      this.name, 
                      this.fullname, 
+                     this.time,
                      this.now_level, 
                      this.now_buy, 
                      this.now_buy_amont, 
